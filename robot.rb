@@ -1,21 +1,21 @@
 require "byebug"
 
 class Robot
-  attr_reader :commands, :y_position, :x_position
-  private :commands, :y_position, :x_position
+  attr_reader :commands, :starting_y_position, :starting_x_position
+  private :commands, :starting_y_position, :starting_x_position
 
   VERTICAL_GRID = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   HORIZONTAL_GRID = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-  def initialize(commands:, y_position: 0, x_position: 0) 
+  def initialize(commands:, starting_y_position: 0, starting_x_position: 0) 
     @commands = commands
-    @y_position = y_position
-    @x_position = x_position
+    @starting_y_position = starting_y_position
+    @starting_x_position = starting_x_position
   end
 
   def move
-    current_y_position = y_position
-    current_x_position = x_position
+    current_y_position = starting_y_position
+    current_x_position = starting_x_position
 
     commands.each do |command|
       case command

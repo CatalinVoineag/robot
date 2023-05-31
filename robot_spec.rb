@@ -14,8 +14,8 @@ RSpec.describe Robot do
       commands = ["N", "E", "S", "W"]
       robot = described_class.new(
         commands: commands,
-        y_position: 4,
-        x_position: 4
+        starting_y_position: 4,
+        starting_x_position: 4
       )
 
       expect { robot.move }.to output("Robot position Y: 4, X: 4\n").to_stdout
@@ -26,8 +26,8 @@ RSpec.describe Robot do
       commands = ["N", "N"]
       robot = described_class.new(
         commands: commands,
-        y_position: 9,
-        x_position: 0
+        starting_y_position: 9,
+        starting_x_position: 0
       )
 
       expect { robot.move }.to output("Robot position Y: 9, X: 0\n").to_stdout
@@ -37,8 +37,8 @@ RSpec.describe Robot do
       commands = ["S", "S"]
       robot = described_class.new(
         commands: commands,
-        y_position: 0,
-        x_position: 0
+        starting_y_position: 0,
+        starting_x_position: 0
       )
 
       expect { robot.move }.to output("Robot position Y: 0, X: 0\n").to_stdout
@@ -48,8 +48,8 @@ RSpec.describe Robot do
       commands = ["W", "W"]
       robot = described_class.new(
         commands: commands,
-        y_position: 0,
-        x_position: 0
+        starting_y_position: 0,
+        starting_x_position: 0
       )
 
       expect { robot.move }.to output("Robot position Y: 0, X: 0\n").to_stdout
@@ -59,8 +59,8 @@ RSpec.describe Robot do
       commands = ["E", "E"]
       robot = described_class.new(
         commands: commands,
-        y_position: 0,
-        x_position: 9
+        starting_y_position: 0,
+        starting_x_position: 9
       )
 
       expect { robot.move }.to output("Robot position Y: 0, X: 9\n").to_stdout
